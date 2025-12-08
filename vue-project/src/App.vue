@@ -4,46 +4,9 @@
             <h1>🎯 Vue 3 Практика - Основы</h1>
             <p>Изучаем реактивность, директивы и компоненты</p>
         </header>
-        <!-- Навигация между примерами -->
-        <nav class="navigation">
-            <button
-                @click="currentDemo = 'reactive'"
-                :class="{ active: currentDemo === 'reactive' }"
-                class="nav-button"
-            >
-                Пример 1: Реактивность
-            </button>
-            <button
-                @click="currentDemo = 'conditional'"
-                :class="{ active: currentDemo === 'conditional' }"
-                class="nav-button"
-            >
-                Пример 2: Списки и условия
-            </button>
-            <button
-                @click="currentDemo = 'events'"
-                :class="{ active: currentDemo === 'events' }"
-                class="nav-button"
-            >
-                Пример 3: События
-            </button>
-        </nav>
-        <!-- Отображаем выбранный компонент -->
+        <!-- Палитра генератор -->
         <main class="main-content">
-            <!-- Компонент ReactiveDemo -->
-            <ReactiveDemo v-if="currentDemo === 'reactive'" />
-
-            <!-- Компонент ConditionalListDemo -->
-            <ConditionalListDemo v-else-if="currentDemo === 'conditional'" />
-
-            <!-- Компонент EventComputedDemo -->
-            <EventComputedDemo v-else-if="currentDemo === 'events'" />
-
-            <!-- Сообщение если ничего не выбрано -->
-            <div v-else class="welcome-message">
-                <h2>Добро пожаловать!</h2>
-                <p>Выберите пример для изучения из навигации выше.</p>
-            </div>
+            <PaletteGenerator />
         </main>
         <footer class="app-footer">
             <p>Vue 3 + Vite • Практика 27</p>
@@ -51,27 +14,12 @@
     </div>
 </template>
 <script>
-// Импортируем наши компоненты, пока файлов нет - должно быть закомментировано
-/*import ReactiveDemo from './components/ReactiveDemo.vue'
-import ConditionalListDemo from './components/ConditionalListDemo.vue'
-import EventComputedDemo from './components/EventComputedDemo.vue'
-*/
-import { ref } from "vue";
+import {} from "vue";
+import PaletteGenerator from "./components/PaletteGenerator.vue";
 export default {
     name: "App",
-
-    // Регистрируем компоненты чтобы использовать их в шаблоне
     components: {
-        // ReactiveDemo,
-        // ConditionalListDemo,
-        // EventComputedDemo
-    },
-    setup() {
-        // Текущий активный демо-компонент
-        const currentDemo = ref("reactive");
-        return {
-            currentDemo,
-        };
+        PaletteGenerator,
     },
 };
 </script>
