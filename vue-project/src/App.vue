@@ -4,9 +4,15 @@
             <h1>🎯 Vue 3 Практика - Основы</h1>
             <p>Изучаем реактивность, директивы и компоненты</p>
         </header>
-        <!-- Палитра генератор -->
+        <nav class="navigation">
+            <router-link to="/" class="nav-button">Генератор</router-link>
+            <router-link to="/library" class="nav-button"
+                >Библиотека</router-link
+            >
+            <router-link to="/export" class="nav-button">Экспорт</router-link>
+        </nav>
         <main class="main-content">
-            <PaletteGenerator />
+            <router-view />
         </main>
         <footer class="app-footer">
             <p>Vue 3 + Vite • Практика 27</p>
@@ -81,7 +87,8 @@ body {
     color: white;
     transform: translateY(-2px);
 }
-.nav-button.active {
+.nav-button.active,
+.router-link-active {
     background-color: #667eea;
     color: white;
 }
